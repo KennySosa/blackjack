@@ -16,6 +16,7 @@ import java.util.Scanner;
  * MainApp coordinates the flow.
  * The real card logic is inside Card, Deck, Hand, Player, and BlackjackGame.
  */
+//yippie
 public class MainApp {
     private static final Scanner scanner = new Scanner(System.in);
 
