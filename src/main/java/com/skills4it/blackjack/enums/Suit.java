@@ -1,4 +1,4 @@
-package com.skills4it.blackjack;
+package com.skills4it.blackjack.enums;
 
 /**
  * Represents the four suits in a standard deck of cards.

@@ -1,5 +1,7 @@
 package com.skills4it.blackjack;
 
+import com.skills4it.blackjack.model.Card;
+import com.skills4it.blackjack.model.Deck;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

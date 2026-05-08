@@ -1,4 +1,4 @@
-package com.skills4it.blackjack;
+package com.skills4it.blackjack.enums;
 
 /**
  * Represents the rank/value printed on a card.

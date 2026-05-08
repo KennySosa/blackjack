@@ -1,5 +1,10 @@
 package com.skills4it.blackjack;
 
+import com.skills4it.blackjack.enums.BettingOption;
+import com.skills4it.blackjack.enums.PlayerRank;
+import com.skills4it.blackjack.service.BlackjackGame;
+import com.skills4it.blackjack.service.Player;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -21,6 +26,7 @@ public class MainApp {
         List<String> playerNames = askForPlayerNames(numberOfPlayers);
 
         BlackjackGame game = new BlackjackGame(playerNames);
+        choosePlayerBets(game);
         game.dealStartingCards();
 
         playTurns(game);
@@ -63,7 +69,58 @@ public class MainApp {
 
         return names;
     }
+    private static void choosePlayerBets(BlackjackGame game) {
 
+        for (Player player : game.getPlayers()) {
+
+            System.out.println();
+            System.out.println(player.getName() + ", choose your betting option:");
+            System.out.println("1. LOW ($100)");
+            System.out.println("2. MEDIUM ($250)");
+            System.out.println("3. HIGH ($500)");
+            System.out.println("4. VIP ($1000)");
+
+            while (true) {
+
+                System.out.print("Enter choice (1-4): ");
+                String choice = scanner.nextLine().trim();
+
+                switch (choice) {
+
+                    case "1":
+                        player.setBettingOption(BettingOption.LOW);
+                        break;
+
+                    case "2":
+                        player.setBettingOption(BettingOption.MEDIUM);
+                        break;
+
+                    case "3":
+                        player.setBettingOption(BettingOption.HIGH);
+                        break;
+
+                    case "4":
+                        player.setBettingOption(BettingOption.VIP);
+                        break;
+
+                    default:
+                        System.out.println("Invalid option. Please choose 1-4.");
+                        continue;
+                }
+
+                break;
+            }
+
+            System.out.println(
+                    player.getName()
+                            + " selected "
+                            + player.getBettingOption().getDisplayName()
+                            + " ($"
+                            + player.getBettingOption().getAmount()
+                            + ")"
+            );
+        }
+    }
     private static void playTurns(BlackjackGame game) {
         for (Player player : game.getPlayers()) {
             System.out.println();
@@ -88,6 +145,25 @@ public class MainApp {
         }
     }
 
+    private static void displayPlayerRanks(BlackjackGame game) {
+        System.out.println();
+        System.out.println("===============================");
+        System.out.println("             RANKS             ");
+        System.out.println("===============================");
+
+        for (Player player : game.getPlayers()) {
+
+            String rankName = "Unranked";//this prevents crashing at when tryin to display rank
+//this assumes player has no rank until the game is done, then assigns one under line 181 and 183
+            if (player.getRank() != null) {
+                rankName = player.getRank().getDisplayName();
+            }
+
+            System.out.println(
+                    player.getName() + " - " + rankName
+            );
+        }
+    }
     private static void printResults(BlackjackGame game) {
         System.out.println();
         System.out.println("================================");
@@ -99,6 +175,18 @@ public class MainApp {
         }
 
         Player winner = game.determineWinner();
+        for (Player player : game.getPlayers()) {
+
+            if (player == winner) {
+                player.setRank(PlayerRank.GOLD);
+            } else {//------- assign ranks at the end of the game also
+                player.setRank(PlayerRank.SILVER);
+            }
+        }
+        // ----------------------------------------------------------ranks
+        if (winner != null) {
+            winner.setRank(PlayerRank.GOLD);
+        }
 
         System.out.println();
 
@@ -109,5 +197,8 @@ public class MainApp {
         } else {
             System.out.println("Winner: " + winner.getName() + " with " + winner.getScore() + " points.");
         }
+
+        //----------------------------------------------------- Display ranks
+        displayPlayerRanks(game);
     }
 }

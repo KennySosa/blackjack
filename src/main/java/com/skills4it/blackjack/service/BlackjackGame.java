@@ -1,4 +1,6 @@
-package com.skills4it.blackjack;
+package com.skills4it.blackjack.service;
+
+import com.skills4it.blackjack.model.Deck;
 
 import java.util.ArrayList;
 import java.util.Collections;

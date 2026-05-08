@@ -1,4 +1,7 @@
-package com.skills4it.blackjack;
+package com.skills4it.blackjack.model;
+
+import com.skills4it.blackjack.enums.Rank;
+import com.skills4it.blackjack.enums.Suit;
 
 import java.util.ArrayList;
 import java.util.Collections;
