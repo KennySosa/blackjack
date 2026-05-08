@@ -72,6 +72,27 @@ public class Player {
 
     @Override
     public String toString() {
-        return name + " - " + hand.display();
+
+        String rankName = "Unranked";
+
+        if (rank != null) {
+            rankName = rank.getDisplayName();
+        }
+
+        String betInfo = "No Bet";
+
+        if (bettingOption != null) {
+            betInfo =
+                    bettingOption.getDisplayName()
+                            + " ($"
+                            + bettingOption.getAmount()
+                            + ")";
+        }
+
+        return
+                "Player: " + name +
+                        " | Score: " + getScore() +
+                        " | Rank: " + rankName +
+                        " | Bet: " + betInfo;
     }
 }
