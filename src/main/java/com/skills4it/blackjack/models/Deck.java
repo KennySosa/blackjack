@@ -20,6 +20,9 @@ import java.util.List;
  * It only returns a Card when deal() is called.
  */
 public class Deck {
+    // builds all 52 cards using nested for-each loops.
+    // Suit.values() returns all 4 suits; Rank.values() returns all 13 ranks. 4 × 13 = 52 cards created.
+    // COUPLING: creates Card objects, iterates Suit and Rank enums.
     private final ArrayList<Card> cards;
 
     public Deck() {

@@ -1,9 +1,7 @@
-package com.skills4it.blackjack.Game;
+package com.skills4it.blackjack.models;
 
 import com.skills4it.blackjack.enums.BettingOption;
 import com.skills4it.blackjack.enums.PlayerRank;
-import com.skills4it.blackjack.models.Card;
-import com.skills4it.blackjack.models.Hand;
 
 /**
  * A Player has a Hand.
@@ -21,6 +19,9 @@ public class Player {
     ///------------------------added score and playerrank
 
     public Player(String name) {
+        // called by BlackjackGame when building the players list.
+        // Validates the name: if null or blank, uses 'Unknown Player'. .isBlank() catches strings with only whitespace.
+        // Always creates a new Hand — the player starts with an empty hand.
         if (name == null || name.isBlank()) {
             this.name = "Unknown Player";
         } else {

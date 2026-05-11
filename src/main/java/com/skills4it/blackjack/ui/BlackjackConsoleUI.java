@@ -4,7 +4,7 @@ import com.skills4it.blackjack.enums.BettingOption;
 import com.skills4it.blackjack.enums.PlayerAction;
 import com.skills4it.blackjack.enums.PlayerRank;
 import com.skills4it.blackjack.Game.BlackjackGame;
-import com.skills4it.blackjack.Game.Player;
+import com.skills4it.blackjack.models.Player;
 
 import java.util.ArrayList;
 import java.util.List;

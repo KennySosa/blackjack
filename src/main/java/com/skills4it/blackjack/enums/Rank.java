@@ -33,6 +33,8 @@ public enum Rank {
 	 * Creates a rank with a display name and point value.
 	 */
 	Rank(String displayName, int pointValue) {
+		// called once per enum value when the class loads. Each value like TWO("2",2) passes its arguments here.
+		// The constructor sets the fields. You can't call this constructor yourself — Java calls it automatically.
 		this.displayName = displayName;
 		this.pointValue = pointValue;
 	}

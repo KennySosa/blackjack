@@ -20,6 +20,9 @@ public class Card {
     private boolean faceUp;
 
     public Card(Suit suit, Rank rank) {
+        //called by Deck when building all 52 cards.
+        // Takes a Suit and a Rank enum value. Sets faceUp to false — all cards start hidden.
+        // COUPLING: depends on Suit and Rank enums.
         this.suit = suit;
         this.rank = rank;
         this.faceUp = false;

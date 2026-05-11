@@ -1,6 +1,7 @@
 package com.skills4it.blackjack.Game;
 
 import com.skills4it.blackjack.models.Deck;
+import com.skills4it.blackjack.models.Player;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -45,7 +46,9 @@ public class BlackjackGame {
 	 * @param playerNames the names of the players who will join the game
 	 */
 	public BlackjackGame(List<String> playerNames) {
-
+// called when BlackjackConsoleUI does 'new BlackjackGame(playerNames)'. Receives a list of strings (not Player objects)
+// — the constructor is responsible for converting names into Player objects. Also creates and shuffles the deck.
+// COUPLING: creates Deck and Player objects.
 		// Create a new deck with all cards.
 		deck = new Deck();
 
