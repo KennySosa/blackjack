@@ -38,7 +38,7 @@ public class BlackjackConsoleUI {
 
     private void printWelcome() {
         System.out.println("================================");
-        System.out.println("        Blackjack Demo");
+        System.out.println("        Blackjack ");
         System.out.println("================================");
         System.out.println();
     }
