@@ -1,9 +1,9 @@
-package com.skills4it.blackjack.service;
+package com.skills4it.blackjack.Game;
 
 import com.skills4it.blackjack.enums.BettingOption;
 import com.skills4it.blackjack.enums.PlayerRank;
-import com.skills4it.blackjack.model.Card;
-import com.skills4it.blackjack.model.Hand;
+import com.skills4it.blackjack.models.Card;
+import com.skills4it.blackjack.models.Hand;
 
 /**
  * A Player has a Hand.

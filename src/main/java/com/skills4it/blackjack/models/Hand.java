@@ -1,4 +1,4 @@
-package com.skills4it.blackjack.model;
+package com.skills4it.blackjack.models;
 
 import java.util.ArrayList;
 import java.util.Collections;

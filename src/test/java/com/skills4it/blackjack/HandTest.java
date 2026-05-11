@@ -2,8 +2,8 @@ package com.skills4it.blackjack;
 
 import com.skills4it.blackjack.enums.Rank;
 import com.skills4it.blackjack.enums.Suit;
-import com.skills4it.blackjack.model.Card;
-import com.skills4it.blackjack.model.Hand;
+import com.skills4it.blackjack.models.Card;
+import com.skills4it.blackjack.models.Hand;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

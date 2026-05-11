@@ -1,4 +1,4 @@
-package com.skills4it.blackjack.model;
+package com.skills4it.blackjack.models;
 
 import com.skills4it.blackjack.enums.Rank;
 import com.skills4it.blackjack.enums.Suit;
